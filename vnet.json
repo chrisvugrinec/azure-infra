@@ -14,9 +14,9 @@
     "solutionName": "customscriptLinux",
     "apiVersion": "2015-06-15",
     "vnetAddressPrefix": "10.0.0.0/16",
-    "subnetName": "[concat(variables('solutionName'),'Subnet')]",
     "subnetPrefix": "10.0.0.0/24",
-    "virtualNetworkName": "[concat(variables('solutionName'),'Vnet')]"
+    "virtualNetworkName": "[parameters('vnetName')]",
+    "subnetName": "[concat(parameters('vnetName'),'Subnet')]",
   },
   "resources": [
     {
