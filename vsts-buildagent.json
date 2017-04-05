@@ -45,26 +45,25 @@
     }
   },
   "variables": {
-    "extensionName": "CustomScript",
-    "scenarioPrefix": "customscriptLinux",
+    "solutionName": "[parameters('dnsNameForPublicIP')]",
     "apiVersion": "2015-05-01-preview",
     "imagePublisher": "Canonical",
     "imageOffer": "UbuntuServer",
     "ubuntuOSVersion": "14.04.2-LTS",
-    "OSDiskName": "[concat(variables('scenarioPrefix'),'OSDisk')]",
-    "nicName": "[concat(variables('scenarioPrefix'),'Nic')]",
+    "OSDiskName": "[concat(variables('solutionName'),'OSDisk')]",
+    "nicName": "[concat(variables('solutionName'),'Nic')]",
     "vnetAddressPrefix": "10.0.0.0/16",
-    "subnetName": "[concat(variables('scenarioPrefix'),'Subnet')]",
+    "subnetName": "[concat(variables('solutionName'),'Subnet')]",
     "subnetPrefix": "10.0.0.0/24",
     "storageAccountType": "Standard_LRS",
-    "publicIPAddressName": "[concat(variables('scenarioPrefix'),'PublicIp')]",
+    "publicIPAddressName": "[concat(variables('solutionName'),'PublicIp')]",
     "publicIPAddressType": "Dynamic",
     "vmStorageAccountContainerName": "vhds",
-    "vmName": "[concat(variables('scenarioPrefix'),'VM')]",
-    "virtualNetworkName": "[concat(variables('scenarioPrefix'),'Vnet')]",
+    "vmName": "[concat(variables('solutionName'),'VM')]",
+    "virtualNetworkName": "[concat(variables('solutionName'),'Vnet')]",
     "vnetID": "[resourceId('Microsoft.Network/virtualNetworks',variables('virtualNetworkName'))]",
     "subnetRef": "[concat(variables('vnetID'),'/subnets/',variables('subnetName'))]",
-    "command": "vsts-provision-buildagent.sh"
+    "command": "sh vsts-provision-buildagent.sh"
   },
   "resources": [
     {
