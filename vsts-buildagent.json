@@ -42,6 +42,12 @@
         "description": "Name of the existing VNET"
       }
     },
+    "existingSubnetName": {
+      "type": "string",
+      "metadata": {
+        "description": "Name of the existing VNET"
+      }
+    },
     "existingVirtualNetworkResourceGroup": {
       "type": "string",
       "metadata": {
@@ -57,7 +63,7 @@
     "ubuntuOSVersion": "14.04.2-LTS",
     "OSDiskName": "[concat(variables('solutionName'),'OSDisk')]",
     "nicName": "[concat(variables('solutionName'),'Nic')]",
-    "subnetName": "[concat(variables('solutionName'),'Subnet')]",
+    "subnetName": "parameters('existingSubnetName')]",
     "subnetPrefix": "10.0.0.0/24",
     "storageAccountType": "Standard_LRS",
     "publicIPAddressName": "[concat(variables('solutionName'),'PublicIp')]",
