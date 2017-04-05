@@ -97,7 +97,7 @@
       "properties": {
         "ipConfigurations": [
           {
-            "name": "[concat(parameters('solutionName'),'ipconfig1')]",
+            "name": "[concat(variables('solutionName'),'ipconfig1')]",
             "properties": {
               "privateIPAllocationMethod": "Dynamic",
               "publicIPAddress": {
