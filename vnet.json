@@ -11,7 +11,7 @@
     }
   },
   "variables": {
-    "solutionName": "customscriptLinux",
+    "solutionName": "[parameters('vnetName')]",
     "apiVersion": "2015-06-15",
     "vnetAddressPrefix": "10.0.0.0/16",
     "subnetPrefix": "10.0.0.0/24",
