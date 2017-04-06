@@ -8,6 +8,8 @@ apt -y install maven
 apt-get install -y libunwind8 libcurl3
 apt-get install -y libunwind8 libcurl3 libicu52
 
+apt-get install -y openjdk-8-jdk-headless
+
 # install the kubectl
 curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
 chmod +x ./kubectl
