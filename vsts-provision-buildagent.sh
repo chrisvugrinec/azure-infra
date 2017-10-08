@@ -3,6 +3,7 @@ password="HelloWorld123!"
 apt-get update
 apt -y install docker.io
 apt -y install maven
+apt -y install ansible
 /usr/sbin/useradd -m -d /vsts -p `openssl passwd -1 $password` vsts
 # fix needed for vsts on ubuntu 16.04
 apt-get install -y libunwind8 libcurl3
