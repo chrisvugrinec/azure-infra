@@ -18,8 +18,15 @@ sudo mv ./kubectl /usr/local/bin/kubectl
 
 # adding user vsts to docker group
 usermod -aG docker vsts
-sudo -H -u vsts bash -c 'ssh-keygen -t rsa -f  ~/.ssh/id_rsa -P ""'
-sudo -H -u vsts bash -c 'mkdir ~/.kube'
-sudo -H -u vsts bash -c '/bin/mkdir /vsts/bagent'
-sudo -H -u vsts bash -c 'cd /vsts/bagent && wget https://github.com/Microsoft/vsts-agent/releases/download/v2.111.1/vsts-agent-ubuntu.16.04-x64-2.111.1.tar.gz' 
-sudo -H -u vsts bash -c 'tar -zxvf /vsts/bagent/vsts-agent-ubuntu.16.04-x64-2.111.1.tar.gz -C /vsts/bagent'
+if [ -f ~/.ssh/id_rsa ]
+then
+  echo "key already exists"
+else
+  sudo -H -u vsts bash -c 'ssh-keygen -t rsa -f  ~/.ssh/id_rsa -P ""'
+  sudo -H -u vsts bash -c 'mkdir ~/.kube'
+fi
+
+
+  sudo -H -u vsts bash -c '/bin/mkdir -p ~/vsts/bagent'
+  sudo -H -u vsts bash -c 'cd ~/vsts/bagent && wget https://github.com/Microsoft/vsts-agent/releases/download/v2.111.1/vsts-agent-ubuntu.16.04-x64-2.111.1.tar.gz'
+  sudo -H -u vsts bash -c 'tar -zxvf ~/vsts/bagent/vsts-agent-ubuntu.16.04-x64-2.111.1.tar.gz -C ~/vsts/bagent'
